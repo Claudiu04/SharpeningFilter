@@ -1,0 +1,44 @@
+{
+  "type": "sharpen",
+  "description": "Sharpening filter for RGB or GrayScale images with a 3x3 kernel.",
+  "input_arguments":[
+    {
+      "name": "width",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_0000"
+    },
+    {
+      "name": "height",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_0004"
+    },
+    {
+      "name": "channels",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_0008"
+    },
+    {
+      "name": "intensity",
+      "type": "int32",
+      "interface": "axi4-lite",
+      "addr": "0x43C0_000C"
+    },
+    {
+      "name": "input_image",
+      "type": "image",
+      "interface": "dma",
+      "base_addr": "0x4040_0000"
+    }
+  ],
+  "output_arguments":[
+    {
+      "name": "output_image",
+      "type": "image",
+      "interface": "dma",
+      "base_addr": "0x4040_0000"
+    }
+  ]
+}
